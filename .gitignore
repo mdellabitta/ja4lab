@@ -1,1 +1,3 @@
 haproxy/lua/
+haproxy/*.pem
+haproxy/*.key

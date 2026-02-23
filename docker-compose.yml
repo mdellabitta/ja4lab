@@ -1,0 +1,31 @@
+services:
+    haproxy:
+      image: haproxy:latest
+      ports:
+        - 8080:80
+        - 8443:443
+        - 8404:8404
+      volumes:
+        - ./haproxy:/usr/local/etc/haproxy/:ro,z
+      sysctls:
+        - net.ipv4.ip_unprivileged_port_start=80
+      networks:
+        internal:
+        default:
+
+    echo:
+      image: jmalloc/echo-server:latest
+      networks:
+        internal:
+    
+    nginx:
+      image: nginx:latest
+      volumes:
+        - ./nginx:/usr/share/nginx/html:ro
+      networks:
+        internal:
+
+
+networks:
+  internal:
+  default:

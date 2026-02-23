@@ -4,7 +4,7 @@ Builds the ja4 database map file for haproxy use
 """
 run = """
 #!/bin/sh
-git submodule update
+git submodule init
 cd haproxy-ja4-fingerprint
 curl -s https://ja4db.com/api/read/ -o ja4db.json
 python ja4db-dedupe.py

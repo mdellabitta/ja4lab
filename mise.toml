@@ -1,0 +1,27 @@
+[tasks.db]
+description = """
+Builds the ja4 database map file for haproxy use
+"""
+run = """
+#!/bin/sh
+git submodule update
+cd haproxy-ja4-fingerprint
+curl -s https://ja4db.com/api/read/ -o ja4db.json
+python ja4db-dedupe.py
+python ja4db-to-map.py
+cp ja4.lua ../haproxy/lua
+cp ja4.map ../haproxy/lua
+cd ..
+"""
+
+[tasks.cert]
+description = """
+Generates a self-signed certificate for NGINX
+"""
+run = """
+cd haproxy
+openssl genrsa -out domain.key 2048
+openssl req -x509 -newkey rsa:2048 -nodes -keyout key.pem -out cert.pem -sha256 -days 365 -subj "/C=US/ST=California/L=San Francisco/O=Internet Archive/OU=Archiving Services/CN=localhost"
+cat key.pem cert.pem domain.key > localhost.pem
+cd ..
+"""

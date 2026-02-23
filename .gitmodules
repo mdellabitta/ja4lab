@@ -1,0 +1,3 @@
+[submodule "haproxy-ja4-fingerprint"]
+	path = haproxy-ja4-fingerprint
+	url = https://github.com/O-X-L/haproxy-ja4-fingerprint.git

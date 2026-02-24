@@ -1,3 +1,6 @@
+[tools]
+hugo = "latest"
+
 [tasks.db]
 description = """
 Builds the ja4 database map file for haproxy use
@@ -5,6 +8,7 @@ Builds the ja4 database map file for haproxy use
 run = """
 #!/bin/sh
 git submodule init
+git submodule update
 cd haproxy-ja4-fingerprint
 curl -s https://ja4db.com/api/read/ -o ja4db.json
 python ja4db-dedupe.py

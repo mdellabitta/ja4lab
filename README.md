@@ -4,11 +4,12 @@ This repo is a toy setup using docker compose to be able to demonstrate how [JA4
 
 To use it, you'll need an environment that can run docker compose (I used Podman), and having the [mise](https://mise.jdx.dev/) tool will let you run some automated tasks (submodule setup and file munging, self-signed ssl cert creation). Just run `mise run` to see what the available commands are.
 
-## Links
+## Links:
 
-_Slides:_ [https://bit.ly/46VSK0m](https://bit.ly/46VSK0m)
-_Github:_ [https://github.com/mdellabitta/ja4lab](https://github.com/mdellabitta/ja4lab)
+**Slides:**<br>[https://bit.ly/46VSK0m](https://bit.ly/46VSK0m)
 
-_JA4 Links:_
-[https://github.com/FoxIO-LLC/ja4](https://github.com/FoxIO-LLC/ja4)
+**Github:**<br>[https://github.com/mdellabitta/ja4lab](https://github.com/mdellabitta/ja4lab)
+
+**JA4 Links:**<br>
+[https://github.com/FoxIO-LLC/ja4](https://github.com/FoxIO-LLC/ja4)<br>
 [https://ja4db.com/](https://ja4db.com/)
